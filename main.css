@@ -10,3 +10,97 @@
 }
 
 /* Include any custom CSS styling here! */
+
+html, body, text, button, label, h3, h5 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    font: 10px sans-serif;
+}
+
+text {
+    font-size: 10px;
+}
+
+path {
+    fill: none;
+    stroke: #aaa;
+}
+
+.col-lg-12 {
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.header > h3, h5 {
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.row {
+    text-align: left;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 2px 1px 5px #969696;
+}
+
+#yearLabel {
+    padding: 0 30px;
+}
+
+svg {
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+  }
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+}
+
+path.domain {
+    stroke: none;
+}
+
+.y .tick line {
+    stroke: #ddd;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    white-space: normal;
+    line-break: auto;
+    font-size: .875rem;
+    word-wrap: break-word;
+    opacity: 0;
+}

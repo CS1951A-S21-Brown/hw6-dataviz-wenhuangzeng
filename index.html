@@ -1,28 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="utf-8">
         <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
         <link rel="stylesheet" href="main.css"/>
-        <!--Feel free to add more CSS files as needed-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://unpkg.com/d3-regression@1.3.4/dist/d3-regression.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
     </head>
-<body>
+    <body>
+
     <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+        <h3>&#127918; Video Games &#127918;</h3>
+        <h5>Tracking the most popular video games and genres throughout the decades</h5>
     </div>
-    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
+
     <div class="row">
-        <div class="col-lg-6">
-            <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+        <div class="center">
+            <label id="yearLabel" for="year">Set Year:</label>
+            <input id="year" type="text" class="span2"
+                   data-slider-min="1980" data-slider-max="2020" data-slider-step="1"
+                   data-slider-value="[2016,2017]"/>
         </div>
-        <div class="col-lg-6">
-            <div id="graph3"></div>
+        <div class="col-lg-12">
+            <div id="barplot"></div>
         </div>
     </div>
-    <!--Feel free to add more JavaScript files as needed-->
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="stacked"></div><br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="heatmap"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Written Questions</h2>
+            <ol>
+                <li><b>Describe how your dashboard answers the questions presented. You don't have to address every question directly, but should at a high level address the main questions.</b></li>
+                <br />
+                The first question is answered by the first barplot because shows the top 10, if there are, games with the highest global sales in the specified years. The second quetion is answered by the second stacked barplot because it shows each region's video game sales subgrouped by the video game genre. The third question is answered by the third heatmap because it shows the global sales of video game genres from publishers.
+                
+                <li><b>List 3 reasons why D3 was helpful and improved your visualization.</b></li>
+                <ul>
+                    <li>It can dynamically update my data representation in my first barplot.</li>
+                    <li>It provides accessible color scheme that can be used for different subgroups in my second stacked barplot.</li>
+                    <li>It provides on hover tooltip effect that better represents the data in my second stacked barplot and my third heatmap.</li>
+                </ul>
+
+                <li><b>List 3 reasons why D3 would not be the best tool for creating a visualization.</b></li>
+                <ul>
+                    <li>D3 has many cool and fancy visualization options which can be tempting for developer to use but those visualizations might be overcustomized and complicated for regular users to understand easily. </li>
+                    <li>D3 requires a good amount of web development experience, which data analysts might not have. This can lead to misunderstanding between data analysts and engineer when communicating what visualization to make.</li>
+                    <li>D3 visualizations, especially the ones with interactive features, are best viewed on a web browser on a computer. However, computer and internet might not be accessible to everyone so the amount of audiences reached can be limited.</li>
+                </ul>
+
+                <h3>Accessible Data Visualization</h3>
+
+                <li>Users that have access to computer and internet will find my dashboard accessible and vice versa. Users that are familiar with stacked barplot or heatmap can also find my visualization accessible and vice versa. Although my visualization has regional information of North America, Europe, and Japan, my visualizations are all in English, so people from Europe and Japan would be able to understand directly. To make this dashboard more accessible to all audiences, I will try to make them mobile friendly so people can see the visualization better on their smart phones. In the article "A Comprehensive Guide to Accessible Data Visualization", it says to label data points directly and don't rely on color legends. However, in my stacked barplot, it relies on color legends. If I am more familiar with D3, I will label my subgroups more directly.</li>
+                <li>In the first barplot, because the video game names can be long and it also has the platform names on the y-axis, I made sure the y-axis title is on the far left so it does not overlap with any video game name. In the second stacked barplot, because there are 12 video game genres, I picked the color scheme with the at least 12 different colors. In the third heatmap, because there are hundreds of publisher, I had to remove publishers that have global sales less than 35 millions in order to decrease the y-axis domain and make the visualization organized.</li>
+            </ol>
+
+            
+        </div>
+    </div>
+    
     <script type="text/javascript" src="main.js"></script>
-</body>
+    <script type="text/javascript" src="barplot.js"></script>
+    <script type="text/javascript" src="stacked_barplot.js"></script>
+    <script type="text/javascript" src="heatmap.js"></script>
+    </body>
 </html>
